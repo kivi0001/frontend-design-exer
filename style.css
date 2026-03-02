@@ -6,15 +6,22 @@
     }
 }
 
+li:not(:has(img)) h3{
+    font-size: 1.6rem;
+}
 
+li:not(:has(img)) :not(:has(h3)) p{
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
 
+.card:has(img){
+    padding: 0;
+}
 
-
-
-
-
-
-
+li:has(img) div{
+    padding: 1rem;
+}
 
 
 
@@ -39,6 +46,8 @@
         box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
         overflow: clip;
     }
+
+
 
     h3 {
         color: #0f172a;
