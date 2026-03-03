@@ -5,8 +5,76 @@
     --color-text-button: #FFF;
 
     /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+    --hide-overlay: 1;
 }
 
+main{
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}
+
+h1{
+    font-size: 28px;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.text-section{
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    p {
+        margin: 2em 0em;
+    }
+    
+    a {
+        margin-top: auto;
+    }
+}
+
+
+.img-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.img-1{
+    grid-column: 2;
+}
+
+.img-2{
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.img-3{
+    grid-column: 2;
+    grid-row: 2 / 4;
+}
+
+.img-4{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.img-5,
+.img-6{
+    grid-row: 3;
+}
+
+.img-7{
+    grid-row: 4;
+    grid-column: 2;
+}
 
 /* Begynd her... */
