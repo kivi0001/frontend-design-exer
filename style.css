@@ -1,9 +1,23 @@
 body {
   display: grid;
   /* Tilføj navngivne linjer */
-  grid-template-columns: 1fr minmax(0, 70ch) 1fr;
+  grid-template-columns: [full-start] 1fr [content] minmax(0, 70ch) [full-end] 1fr;
 }
 
-.breakout {
-  background: #a8fad5;
+main,
+header,
+footer,
+section{
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full-start / -1;
+  > :not(&) {
+    grid-column: content;
+  }
+
+  .breakout {
+    background: #a8fad5;
+  }
+
 }
+
