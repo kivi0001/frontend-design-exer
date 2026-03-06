@@ -1,7 +1,7 @@
 /* Dine styles her */
-article > * + * {
+article{
+ > * + * {
     margin-block-start: var(--flow-space, .5rlh);
-    
 }
 
 h2{
@@ -13,6 +13,8 @@ h3{
 
 }
 
-h3 ~ {
+h3 + * {
     --flow-space: .25rlh;
+}
+
 }
