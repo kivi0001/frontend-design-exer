@@ -9,8 +9,117 @@
     --gray-700: #374151;
     --gray-800: #1f2937;
     --gray-900: #111827;
+
+    --step--1: clamp(0.89rem, 0.86rem + 0.16vw, 1rem);
+    --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+    --step-1: clamp(1.25rem, 1.12rem + 0.6vw, 1.5rem);
+    --step-2: clamp(1.56rem, 1.3rem + 1.2vw, 2rem);
+
+    --space-s: clamp(0, 0.7rem + 0.2vw, 0.9rem);
+    --space-m: clamp(0, 0.9rem + 0.4vw, 1.25rem);
+    --space-l: clamp(0, 1.3rem + 0.8vw, 2rem);
 }
 
 body {
     font-family: system-ui, sans-serif;
+}
+
+article {
+  --measure: 68ch;
+  --flow-space: 1em;
+  --text-strong: var(--gray-900);
+  --text: var(--gray-700);
+  --text-muted: var(--gray-500);
+
+  max-inline-size: var(--measure);
+  margin-inline: auto;
+  padding: var(--space-l, 2rem) var(--space-m, 1rem);
+  color: var(--text);
+}
+
+article > * + * {
+  margin-block-start: var(--flow-space);
+}
+
+article :is(h1, h2, h3, h4) {
+  color: var(--text-strong);
+
+}
+
+.article h2 + h3 {
+  --flow-space: var(--space-3);
+}
+
+h1 {
+  font-size: var(--step-2);
+  padding: var(--space-s);
+
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+h2 {
+  font-size: var(--step-1);
+  padding: var(--space-m);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h3{
+    font-size: var(--step-0);
+    padding: var(--space-m);
+  line-height: 1.2;
+}
+
+
+.text-lead {
+  font-size: clamp(1.12rem, 1.02rem + .4cqi, 1.28rem);
+  line-height: 1.45;
+}
+
+.article h3 + p {
+  --flow-space: var(--space-4);
+}
+
+p {
+  color: var(--gray-600);
+  max-inline-size: 65ch;
+  font-size: var(--step--1);
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.article .text-small {
+  font-size: .95rem;
+  line-height: 1.45;
+}
+
+article :is(figcaption){
+  color: var(--gray-400);
+}
+
+article p + :is(h2, h3) {
+  margin-block-start: 2em;
+}
+
+article :is(h2, h3) + :is(h3, h4) {
+  margin-block-start: .35em;
+}
+
+code {
+  font-family: var(--font-input, ui-monospace, monospace);
+  font-size: .9em;
+  background: oklch(0.93 0.02 260);
+  border: 1px solid oklch(0.86 0.02 260);
+  border-radius: .35rem;
+  padding: .08em .35em;
+}
+
+a {
+  color: oklch(0.48 0.17 265);
+  text-decoration-thickness: 2px;
+  text-underline-offset: .14em;
+}
+
+a:hover {
+  color: oklch(64.74% 0.12403 258.051);
 }
