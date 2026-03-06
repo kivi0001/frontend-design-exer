@@ -18,6 +18,10 @@
     --space-s: clamp(0, 0.7rem + 0.2vw, 0.9rem);
     --space-m: clamp(0, 0.9rem + 0.4vw, 1.25rem);
     --space-l: clamp(0, 1.3rem + 0.8vw, 2rem);
+
+    --text-strong: var(--gray-900);
+    --text: var(--gray-700);
+    --text-muted: var(--gray-500);
 }
 
 body {
@@ -25,20 +29,15 @@ body {
 }
 
 article {
-  --measure: 68ch;
-  --flow-space: 1em;
-  --text-strong: var(--gray-900);
-  --text: var(--gray-700);
-  --text-muted: var(--gray-500);
 
-  max-inline-size: var(--measure);
+  max-inline-size: var(--measure, 70ch);
   margin-inline: auto;
-  padding: var(--space-l, 2rem) var(--space-m, 1rem);
+  padding: 2cqw;
   color: var(--text);
 }
 
 article > * + * {
-  margin-block-start: var(--flow-space);
+  margin-block-start: var(--flow-space, 1rlh);
 }
 
 article :is(h1, h2, h3, h4) {
@@ -54,9 +53,9 @@ h1 {
   font-size: var(--step-2);
   padding: var(--space-s);
 
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
+
 h2 {
   font-size: var(--step-1);
   padding: var(--space-m);
@@ -83,9 +82,10 @@ h3{
 p {
   color: var(--gray-600);
   max-inline-size: 65ch;
-  font-size: var(--step--1);
-  line-height: 1.55;
+  font-size: round(down, var(--step--1), 1px);
+  line-height: round(down, var(--step--1) * 1.5, 4px);
   font-weight: 400;
+
 }
 
 .article .text-small {
